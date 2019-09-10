@@ -17,3 +17,4 @@ echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${IN
 sh -c "${INPUT_ARGS}"
 
 docker logout
+rm -Rf ~/.docker
