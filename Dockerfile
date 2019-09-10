@@ -22,5 +22,4 @@ RUN ln -s /usr/local/lib/npm/bin/npm-cli.js /usr/local/bin/npm && \
 	npm i -g git+https://git@github.com/anzerr/gha.cli.git
 
 COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["sh", "/entrypoint.sh"]
-CMD ["sh"]
+ENTRYPOINT sh /entrypoint.sh
