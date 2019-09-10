@@ -1,5 +1,5 @@
 FROM anzerr/node:12 as node
-FROM docker:19.03.2 as runtime
+FROM docker:19.03.2
 LABEL "com.github.actions.name"="Docker util"
 LABEL "com.github.actions.description"="publish docker image"
 LABEL "com.github.actions.icon"="anchor"
@@ -21,5 +21,5 @@ RUN ln -s /usr/local/lib/npm/bin/npm-cli.js /usr/local/bin/npm && \
 	chmod +x /usr/local/bin/npm /usr/local/bin/npx && \
 	npm i -g git+https://git@github.com/anzerr/gha.cli.git
 
-ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT sh /entrypoint.sh
