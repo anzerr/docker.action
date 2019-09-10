@@ -14,6 +14,6 @@ fi
 
 echo ${INPUT_PASSWORD} | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
 
-sh -c "$*"
+sh -c "${INPUT_ARGS}"
 
 docker logout
